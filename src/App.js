@@ -5,7 +5,7 @@ import List from './components/List';
 
 function App() {
 
-  const  [todos, setTodos ] = useState([])
+  const  [todos, setTodos, ] = useState([])
 
   const onAddTask = (value) => {
       setTodos([
@@ -35,6 +35,7 @@ function App() {
 
   return (
     <div>
+      <div>
       <section id="app" className='container'>
         <header>
           <h1 className='title'>Lista de tarefas</h1>
@@ -44,6 +45,8 @@ function App() {
           <List todos={todos} onRemove={onRemove} onToggle={onToggle} />
         </div>
       </section>
+      </div>
+
     </div>
   );
 }

@@ -28,3 +28,8 @@ ul li button{
 }
 ul li button:active{opacity: 0.5;}
 
+.Ediction{
+    margin-left: 340px;
+    position: fixed;
+}
+
