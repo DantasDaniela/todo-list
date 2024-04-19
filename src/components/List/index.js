@@ -3,8 +3,13 @@ import PropTypes from "prop-types"
 import { MdDelete } from "react-icons/md"
 import "./style.css";
 
-function List({todos, onRemove, onToggle}) {
 
+function List({todos, onRemove, onToggle}) {
+  const confirmDelete = (item) => {
+    if (window.confirm('Tem certeza que deseja excluir este item?')) {
+      onRemove(item);
+    }
+  };
   return (
     <ul className='todo-list'>
       {
@@ -16,7 +21,7 @@ function List({todos, onRemove, onToggle}) {
             >{item.name}</span>
             <button
               type='button'
-              onClick={() => onRemove(item)}
+              onClick={() => confirmDelete(item) }
             >
               <MdDelete size={24} />
             </button>
@@ -24,6 +29,7 @@ function List({todos, onRemove, onToggle}) {
         ))
       }
     </ul>
+    
   )
 }
 
